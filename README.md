@@ -1,10 +1,14 @@
 # AKC Shopping
 
+**All You Need, All in One Place**
+
 Shop from vendors across Malawi. Pay with Airtel Money, TNM Mpamba or bank transfer, and track your delivery. Available in English, Chichewa and Tumbuka.
 
 ## Download for Android
 
 **[Download AKC-Shopping.apk](https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk)**
+
+Visit the website: **[akc-shopping.github.io/akc-shopping-app](https://akc-shopping.github.io/akc-shopping-app/)**
 
 Or see all versions on the [Releases page](https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest).
 
@@ -17,4 +21,4 @@ Or see all versions on the [Releases page](https://github.com/AKC-SHOPPING/akc-s
 
 AKC Shopping is not on the Play Store yet, so Android asks you to confirm the install. This is normal for apps downloaded outside the Play Store.
 
-Made in Malawi 🇲🇼 · A product of AKC Investment
+Made in Malawi 🇲🇼 · A product of All Kind Choice (AKC) Tech Ltd
