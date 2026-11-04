@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AKC Shopping: shop from vendors across Malawi</title>
+<meta name="description" content="Download AKC Shopping for Android. Browse many vendors, pay with Airtel Money, TNM Mpamba or bank transfer, and track your delivery.">
+<meta property="og:title" content="AKC Shopping">
+<meta property="og:description" content="Shop from vendors across Malawi. Download the Android app.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#CC0000; --red-deep:#9a0000; --ink:#211c1b; --paper:#fbf7f4;
+  --blue:#1B4F8A; --line:#e6dcd5; --muted:#665d59;
+  --head:"Bricolage Grotesque","Segoe UI",Roboto,Arial,sans-serif;
+  --body:"Figtree","Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+nav{background:var(--red);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--head);font-weight:800;font-size:20px;text-decoration:none;letter-spacing:-.01em}
+.nav-btn{background:#fff;color:var(--red);font-weight:600;text-decoration:none;padding:8px 18px;border-radius:999px;font-size:15px}
+
+.hero{background:var(--red);color:#fff;padding:40px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(38px,6vw,64px);line-height:1.04;letter-spacing:-.03em}
+.hero p.lead{font-size:20px;margin:22px 0 32px;max-width:30em;color:#ffe3e0}
+.cta{display:inline-flex;flex-direction:column;background:#fff;color:var(--red);text-decoration:none;padding:16px 30px;border-radius:14px;box-shadow:0 8px 0 var(--red-deep);transition:transform .15s,box-shadow .15s}
+.cta strong{font-family:var(--head);font-size:22px;font-weight:800}
+.cta span{font-size:14px;color:var(--muted)}
+.cta:hover{transform:translateY(3px);box-shadow:0 5px 0 var(--red-deep)}
+.cta:active{transform:translateY(8px);box-shadow:0 0 0 var(--red-deep)}
+.hero small{display:block;margin-top:26px;color:#ffc9c4;font-size:15px}
+.hero small a{color:#fff}
+
+/* phone: drawn copy of the real Home screen. If images/home.jpg exists it covers the drawing. */
+.phone{position:relative;width:286px;height:600px;margin:0 auto;background:#fff;color:#222;border:9px solid #161110;border-radius:40px;overflow:hidden;box-shadow:0 30px 60px rgba(60,0,0,.45);animation:rise .8s .1s both cubic-bezier(.2,.8,.2,1);font-family:Roboto,"Segoe UI",Arial,sans-serif}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:9;background:#fff}
+.ph{position:relative;background:#e9e2dd;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.p-head{position:relative;background:#1c1413;color:#fff;padding:20px 14px 12px;display:flex;justify-content:space-between;align-items:center}
+.p-head .ph{position:absolute;inset:0}
+.p-head::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.68)}
+.p-head>*{position:relative;z-index:1}
+.p-head small{display:block;font-size:10px;opacity:.8}
+.p-head b{font-size:15px;font-weight:800}
+.p-icons{display:flex;gap:14px}
+.p-icons svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.p-search{margin:8px 10px;background:#f1f1f1;border:1px solid #e2e2e2;border-radius:22px;padding:8px 12px;font-size:11px;color:#777;display:flex;align-items:center;gap:7px}
+.p-search svg{width:13px;height:13px;stroke:#777;fill:none;stroke-width:2.2}
+.p-search svg:last-child{stroke:var(--red);margin-left:auto}
+.p-banner{margin:2px 12px 0;height:84px;border-radius:14px;position:relative;overflow:hidden;background:#3b2b28}
+.p-banner .ph{position:absolute;inset:0}
+.p-banner .g{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.35),rgba(0,0,0,.05));display:flex;align-items:center;gap:8px;padding:0 11px;color:#fff}
+.p-banner .ic{width:28px;height:28px;border-radius:9px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:13px;flex:none}
+.p-banner b{display:block;font-size:11.5px;font-weight:800;margin-bottom:2px}
+.p-banner span{display:block;font-size:9px;line-height:1.25;opacity:.9}
+.p-banner .ar{margin-left:auto;width:21px;height:21px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:10px;flex:none}
+.p-dots{display:flex;justify-content:center;gap:4px;margin:6px 0 0}
+.p-dots i{width:5px;height:5px;border-radius:3px;background:#ccc}
+.p-dots i:first-child{width:15px;background:var(--red)}
+.p-flash{margin:9px 10px 0;background:#1a1a1a;color:#fff;border-radius:12px;padding:6px 9px;display:flex;align-items:center;justify-content:space-between;font-size:10px;font-weight:600}
+.p-flash .tm{display:flex;gap:2px;align-items:center;font-weight:700}
+.p-flash .tm i{font-style:normal;background:var(--red);border-radius:4px;padding:1px 5px}
+.p-flash .tm u{text-decoration:none}
+.p-flash .sh{background:#fff;color:var(--red);border-radius:99px;padding:3px 9px;font-weight:700}
+.p-sec{display:flex;justify-content:space-between;align-items:baseline;padding:0 12px;margin:12px 0 7px}
+.p-sec b{font-size:16px;font-weight:800}
+.p-sec span{font-size:10px;color:var(--red);font-weight:600}
+.p-cats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 12px}
+.p-cat{height:62px;border-radius:10px;position:relative}
+.p-cat::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.p-cat b{position:absolute;left:7px;bottom:6px;z-index:2;color:#fff;font-size:10.5px;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.p-prods{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 12px}
+.p-prod{border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff}
+.p-prod .ph{height:80px;display:grid;place-items:center;font-size:30px}
+.p-prod .ph img+*{position:relative}
+.p-prod .d{position:absolute;top:6px;left:6px;background:var(--red);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:5px;z-index:2}
+.p-prod .h{position:absolute;top:6px;right:6px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.3);color:#fff;font-size:10px;display:grid;place-items:center;z-index:2}
+.p-prod .t{padding:7px 8px 9px;font-size:10px}
+.p-prod .t b{display:block;font-size:10.5px;font-weight:600;line-height:1.25}
+.p-prod .st{color:#FFA500;font-size:9px;margin:2px 0}
+.p-prod .pr{color:var(--red);font-weight:800;font-size:11.5px}
+.p-prod .pr s{color:#999;font-weight:400;font-size:8.5px;margin-left:4px}
+
+section{padding:84px 0}
+h2{font-family:var(--head);font-weight:800;font-size:clamp(28px,4vw,40px);line-height:1.1;letter-spacing:-.02em;max-width:18em}
+.sub{color:var(--muted);margin-top:12px;max-width:34em}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border-top:1px solid var(--line)}
+.feat{padding:28px 28px 28px 0;border-bottom:1px solid var(--line)}
+.feat h3{font-family:var(--head);font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:16px}
+
+.steps{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:18px;border-top:4px solid var(--red)}
+.steps li::before{content:counter(s);font-family:var(--head);font-weight:800;font-size:34px;color:var(--red);display:block;line-height:1;margin-bottom:10px}
+.steps li b{display:block;font-size:19px;font-family:var(--head)}
+.steps li p{color:var(--muted);font-size:16px;margin-top:4px}
+.more{margin-top:36px}
+.more a{color:var(--red);font-weight:600}
+
+.vendor{background:var(--blue);color:#fff}
+.vendor .wrap{display:flex;gap:40px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.vendor p{color:#cfe0f3;margin-top:12px;max-width:34em}
+.vendor .cta{box-shadow:0 8px 0 #0f3560;color:var(--blue)}
+.vendor .cta:hover{box-shadow:0 5px 0 #0f3560}
+
+footer{padding:40px 0;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .hero{padding:28px 0 72px}
+  .hero .wrap{grid-template-columns:1fr;gap:56px}
+  .feats,.steps ol{grid-template-columns:1fr}
+  .feat{padding-right:0}
+  section{padding:64px 0}
+}
+@media (prefers-reduced-motion:reduce){.phone{animation:none}.cta{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">AKC Shopping</a>
+    <a class="nav-btn" href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk">Download</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Everything you need, from vendors across Malawi.</h1>
+      <p class="lead">Browse many stores in one app, pay with Airtel Money, TNM Mpamba or bank transfer, and follow your order until it reaches your door.</p>
+      <a class="cta" href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk">
+        <strong>Download for Android</strong>
+        <span>Version 1.0.0, 59.5 MB</span>
+      </a>
+      <small>Need help installing? <a href="#install">See the 3 steps</a>.</small>
+    </div>
+
+    <!-- To use a real screenshot: put it in an "images" folder named home.jpg. It replaces the drawing below automatically. -->
+    <div class="phone" role="img" aria-label="The AKC Shopping home screen">
+      <img class="shot" src="images/home.jpg" alt="AKC Shopping home screen" onerror="this.remove()">
+
+      <div class="p-head">
+        <div class="ph"><img src="images/login-bg.jpg" alt="" onerror="this.remove()"></div>
+        <div><small>Good morning,</small><b>Chikondi 👋</b></div>
+        <div class="p-icons">
+          <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+      </div>
+
+      <div class="p-search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search products and vendors
+        <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+      </div>
+
+      <div class="p-banner">
+        <div class="ph"><img src="images/banner.jpg" alt="" onerror="this.remove()"></div>
+        <div class="g">
+          <div class="ic">🎁</div>
+          <div><b>Free Delivery Available</b><span>Vendors cover delivery on select routes. See what qualifies.</span></div>
+          <div class="ar">→</div>
+        </div>
+      </div>
+      <div class="p-dots"><i></i><i></i><i></i><i></i><i></i></div>
+
+      <div class="p-flash">
+        <span>⚡ Flash sale ends in</span>
+        <span class="tm"><i>02h</i><u>:</u><i>14m</i><u>:</u><i>09s</i></span>
+        <span class="sh">Shop →</span>
+      </div>
+
+      <div class="p-sec"><b>Categories</b><span>See all</span></div>
+      <div class="p-cats">
+        <div class="p-cat ph"><img src="images/cat-1.jpg" alt="" onerror="this.remove()"><b>Fashion</b></div>
+        <div class="p-cat ph"><img src="images/cat-2.jpg" alt="" onerror="this.remove()"><b>Phones</b></div>
+        <div class="p-cat ph"><img src="images/cat-3.jpg" alt="" onerror="this.remove()"><b>Shoes</b></div>
+        <div class="p-cat ph"><img src="images/cat-4.jpg" alt="" onerror="this.remove()"><b>Home</b></div>
+      </div>
+
+      <div class="p-sec"><b>New Arrivals ✨</b><span>See all</span></div>
+      <div class="p-prods">
+        <div class="p-prod">
+          <div class="ph"><img src="images/product-1.jpg" alt="" onerror="this.remove()">👟<span class="d">-20%</span><span class="h">♡</span></div>
+          <div class="t"><b>Men’s sneakers</b><div class="st">★★★★☆</div><div class="pr">MK28,900<s>MK36,100</s></div></div>
+        </div>
+        <div class="p-prod">
+          <div class="ph"><img src="images/product-2.jpg" alt="" onerror="this.remove()">👜<span class="h">♡</span></div>
+          <div class="t"><b>Ladies handbag</b><div class="st">★★★★★</div><div class="pr">MK19,500</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Shopping that works the way you already pay and talk.</h2>
+    <p class="sub">Built in Malawi, for Malawian shoppers and sellers.</p>
+    <div class="feats">
+      <div class="feat"><h3>Many vendors, one app</h3><p>Compare products from different vendors without leaving the app.</p></div>
+      <div class="feat"><h3>Pay your way</h3><p>Airtel Money, TNM Mpamba or bank transfer, right inside the app.</p></div>
+      <div class="feat"><h3>Track your delivery</h3><p>See your order move from packing to shipped to delivered, with your driver’s name.</p></div>
+      <div class="feat"><h3>Flash sales</h3><p>Limited-time prices with a live countdown, so you know when a deal ends.</p></div>
+      <div class="feat"><h3>Message vendors</h3><p>Ask about a product before you buy. Every product has its own chat.</p></div>
+      <div class="feat"><h3>English, Chichewa and Tumbuka</h3><p>Use the app in the language you are most comfortable with.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="install">
+  <div class="wrap">
+    <h2>Install in 3 steps</h2>
+    <p class="sub">AKC Shopping is not on the Play Store yet, so Android asks you to confirm the install. This is normal for apps downloaded outside the Play Store.</p>
+    <ol>
+      <li><b>Download the app</b><p>Tap the Download button. If your browser warns about the file, choose Download anyway.</p></li>
+      <li><b>Open the file</b><p>If Android says your phone isn’t allowed to install unknown apps, tap Settings and turn on Allow from this source. Then go back.</p></li>
+      <li><b>Install without scanning</b><p>If Play Protect shows a warning, tap More details, then Install without scanning. Tap Install, then Open.</p></li>
+    </ol>
+    <p class="more">Something not working? <a href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest">Open the full install guide</a>.</p>
+  </div>
+</section>
+
+<section class="vendor">
+  <div class="wrap">
+    <div>
+      <h2>Sell on AKC Shopping</h2>
+      <p>Open the app, choose Become a vendor, and send your details for approval. Once approved, your products reach customers across Malawi.</p>
+    </div>
+    <a class="cta" href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk">
+      <strong>Get the app</strong>
+      <span>Android, free</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>AKC Shopping 1.0.0, made in Malawi 🇲🇼</div>
+    <div>A product of AKC Investment</div>
+  </div>
+</footer>
+
+</body>
+</html>
