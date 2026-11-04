@@ -10,6 +10,8 @@ Shop from vendors across Malawi. Pay with Airtel Money, TNM Mpamba or bank trans
 
 Visit the website: **[akc-shopping.github.io/akc-shopping-app](https://akc-shopping.github.io/akc-shopping-app/)**
 
+Terms and policies: **[akc-shopping.github.io/legal](https://akc-shopping.github.io/legal/)**
+
 Or see all versions on the [Releases page](https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest).
 
 ## How to install
