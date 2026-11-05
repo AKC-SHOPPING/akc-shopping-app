@@ -10,37 +10,45 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --red:#CC0000; --red-deep:#9a0000; --ink:#211c1b; --paper:#fbf7f4;
   --blue:#1B4F8A; --line:#e6dcd5; --muted:#665d59;
-  --head:"Bricolage Grotesque","Segoe UI",Roboto,Arial,sans-serif;
-  --body:"Figtree","Segoe UI",Roboto,Arial,sans-serif;
+  --head:"Unbounded","Segoe UI",Roboto,Arial,sans-serif;
+  --body:"Manrope","Segoe UI",Roboto,Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+@media (min-width:821px){body{font-size:17px}}
 a{color:inherit}
 :focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
 nav{background:var(--red);color:#fff}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:92px}
-.brand{font-family:var(--head);font-weight:800;font-size:clamp(34px,6vw,46px);text-decoration:none;letter-spacing:-.025em}
-.nav-btn{background:#fff;color:var(--red);font-weight:600;text-decoration:none;padding:8px 18px;border-radius:999px;font-size:15px}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--head);font-weight:800;font-size:clamp(21px,5.6vw,30px);text-decoration:none;letter-spacing:-.03em;white-space:nowrap}
+.nav-btn{background:#fff;color:var(--red);font-weight:700;text-decoration:none;padding:9px 18px;border-radius:999px;font-size:14px;white-space:nowrap}
 
-.hero{background:var(--red);color:#fff;padding:40px 0 96px}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-h1{font-family:var(--head);font-weight:800;font-size:clamp(30px,4.6vw,48px);line-height:1.08;letter-spacing:-.02em}
-.hero p.lead{font-size:20px;margin:20px 0 32px;max-width:30em;color:#ffe3e0}
-.cta{display:inline-flex;flex-direction:column;background:#fff;color:var(--red);text-decoration:none;padding:16px 30px;border-radius:14px;box-shadow:0 8px 0 var(--red-deep);transition:transform .15s,box-shadow .15s}
-.cta strong{font-family:var(--head);font-size:22px;font-weight:800}
-.cta span{font-size:14px;color:var(--muted)}
-.cta:hover{transform:translateY(3px);box-shadow:0 5px 0 var(--red-deep)}
-.cta:active{transform:translateY(8px);box-shadow:0 0 0 var(--red-deep)}
-.hero small{display:block;margin-top:26px;color:#ffc9c4;font-size:15px}
-.hero small a{color:#fff}
+.hero{background:var(--red);color:#fff;padding:36px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.hero .txt{padding-bottom:64px}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(27px,7.8vw,58px);line-height:1.08;letter-spacing:-.035em}
+.hero p.lead{font-size:clamp(16px,4.4vw,19px);margin:18px 0 26px;max-width:28em;color:#ffe3e0}
+.cta{display:inline-flex;flex-direction:column;background:#fff;color:var(--red);text-decoration:none;padding:15px 28px;border-radius:16px;box-shadow:0 7px 0 var(--red-deep);transition:transform .15s,box-shadow .15s}
+.cta strong{font-family:var(--head);font-size:17px;font-weight:700;letter-spacing:-.01em}
+.cta span{font-size:13px;color:var(--muted);font-weight:500}
+.cta:hover{transform:translateY(3px);box-shadow:0 4px 0 var(--red-deep)}
+.cta:active{transform:translateY(7px);box-shadow:0 0 0 var(--red-deep)}
+.stats{display:flex;gap:32px;margin-top:30px}
+.stat{display:flex;flex-direction:column}
+.stat[hidden]{display:none}
+.stat b{font-family:var(--head);font-weight:800;font-size:clamp(24px,7vw,34px);line-height:1;letter-spacing:-.03em}
+.stat span{font-size:13px;color:#ffc9c4;margin-top:6px;font-weight:600}
+.hero small{display:block;margin-top:24px;color:#ffe3e0;font-size:14.5px}
+.hero small a{color:#fff;font-weight:700}
+.phone-wrap{width:286px;height:470px;margin:0 auto;overflow:hidden}
 
 /* phone: drawn copy of the real Home screen. If images/home.jpg exists it covers the drawing. */
 .phone{position:relative;width:286px;height:600px;margin:0 auto;background:#fff;color:#222;border:9px solid #161110;border-radius:40px;overflow:hidden;box-shadow:0 30px 60px rgba(60,0,0,.45);animation:rise .8s .1s both cubic-bezier(.2,.8,.2,1);font-family:Roboto,"Segoe UI",Arial,sans-serif}
@@ -95,18 +103,18 @@ h1{font-family:var(--head);font-weight:800;font-size:clamp(30px,4.6vw,48px);line
 .p-prod .pr s{color:#999;font-weight:400;font-size:8.5px;margin-left:4px}
 
 section{padding:84px 0}
-h2{font-family:var(--head);font-weight:800;font-size:clamp(28px,4vw,40px);line-height:1.1;letter-spacing:-.02em;max-width:18em}
+h2{font-family:var(--head);font-weight:700;font-size:clamp(23px,5.6vw,34px);line-height:1.15;letter-spacing:-.025em;max-width:20em}
 .sub{color:var(--muted);margin-top:12px;max-width:34em}
 .feats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border-top:1px solid var(--line)}
 .feat{padding:28px 28px 28px 0;border-bottom:1px solid var(--line)}
-.feat h3{font-family:var(--head);font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.feat h3{font-family:var(--head);font-size:17px;font-weight:700;letter-spacing:-.015em;margin-bottom:8px}
 .feat p{color:var(--muted);font-size:16px}
 
 .steps{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .steps ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px;counter-reset:s}
 .steps li{counter-increment:s;padding-top:18px;border-top:4px solid var(--red)}
 .steps li::before{content:counter(s);font-family:var(--head);font-weight:800;font-size:34px;color:var(--red);display:block;line-height:1;margin-bottom:10px}
-.steps li b{display:block;font-size:19px;font-family:var(--head)}
+.steps li b{display:block;font-size:16px;font-family:var(--head);font-weight:700;letter-spacing:-.01em}
 .steps li p{color:var(--muted);font-size:16px;margin-top:4px}
 .more{margin-top:36px}
 .more a{color:var(--red);font-weight:600}
@@ -122,8 +130,11 @@ footer a{color:var(--red);font-weight:600}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media (max-width:820px){
-  .hero{padding:28px 0 72px}
-  .hero .wrap{grid-template-columns:1fr;gap:56px}
+  .hero{padding-top:28px}
+  .hero .wrap{grid-template-columns:1fr;gap:10px}
+  .hero .txt{padding-bottom:34px}
+  .hero .cta{display:flex;width:100%;align-items:center;text-align:center}
+  .phone-wrap{height:400px}
   .feats,.steps ol{grid-template-columns:1fr}
   .feat{padding-right:0}
   section{padding:64px 0}
@@ -142,18 +153,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <header class="hero">
   <div class="wrap">
-    <div>
+    <div class="txt">
       <h1>All You Need,<br>All in One Place</h1>
       <p class="lead">Browse many stores in one app, pay with Airtel Money, TNM Mpamba or bank transfer, and follow your order until it reaches your door.</p>
       <a class="cta" href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk">
         <strong>Download for Android</strong>
         <span>Version 1.0.0, 59.5 MB</span>
       </a>
+      <div class="stats" aria-live="polite">
+        <div class="stat" id="stat-dl" hidden><b id="n-dl">0</b><span>downloads</span></div>
+        <div class="stat" id="stat-views" hidden><b id="n-views">0</b><span>page views</span></div>
+      </div>
       <small>Need help installing? <a href="#install">See the 3 steps</a>.</small>
     </div>
 
     <!-- To use a real screenshot: put it in an "images" folder named home.jpg. It replaces the drawing below automatically. -->
-    <div class="phone" role="img" aria-label="The AKC Shopping home screen">
+    <div class="phone-wrap"><div class="phone" role="img" aria-label="The AKC Shopping home screen">
       <img class="shot" src="images/home.jpg" alt="AKC Shopping home screen" onerror="this.remove()">
 
       <div class="p-head">
@@ -206,7 +221,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <div class="t"><b>Ladies handbag</b><div class="st">★★★★★</div><div class="pr">MK19,500</div></div>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 </header>
 
@@ -259,5 +274,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </footer>
 
+<script>
+(function(){
+  // Change these to hide a number until it passes a minimum.
+  var MIN_DOWNLOADS=0, MIN_VIEWS=0;
+  function show(id,n,min){
+    var box=document.getElementById('stat-'+id);
+    if(box&&typeof n==='number'&&isFinite(n)&&n>=min){
+      document.getElementById('n-'+id).textContent=n.toLocaleString('en-US');
+      box.hidden=false;
+    }
+  }
+  function cached(key){try{var o=JSON.parse(sessionStorage.getItem(key));if(o&&Date.now()-o.t<600000)return o.v}catch(e){}return null}
+  function save(key,v){try{sessionStorage.setItem(key,JSON.stringify({t:Date.now(),v:v}))}catch(e){}}
+
+  // Downloads: GitHub counts every download of each APK file in the Releases.
+  var d=cached('akc_dl');
+  if(d!==null){show('dl',d,MIN_DOWNLOADS)}
+  else{
+    fetch('https://api.github.com/repos/AKC-SHOPPING/akc-shopping-app/releases?per_page=100')
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(rel){
+        var t=0;
+        rel.forEach(function(r){(r.assets||[]).forEach(function(a){if(/\.apk$/i.test(a.name))t+=a.download_count||0})});
+        save('akc_dl',t);show('dl',t,MIN_DOWNLOADS);
+      }).catch(function(){});
+  }
+
+  // Views: free shared counter, counted once per browser session.
+  var v=cached('akc_views');
+  if(v!==null){show('views',v,MIN_VIEWS)}
+  else{
+    fetch('https://tally.yuki.sh/hits/github@akc-shopping/landing')
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(j){save('akc_views',j.visit);show('views',j.visit,MIN_VIEWS)})
+      .catch(function(){});
+  }
+})();
+</script>
 </body>
 </html>
