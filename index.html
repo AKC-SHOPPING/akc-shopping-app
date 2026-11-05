@@ -10,7 +10,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Montserrat:ital,wght@1,800;1,900&display=swap" rel="stylesheet">
 <style>
 :root{
   --red:#CC0000; --red-deep:#9a0000; --ink:#211c1b; --paper:#fbf7f4;
@@ -26,10 +26,14 @@ a{color:inherit}
 :focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-nav{background:var(--red);color:#fff}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{font-family:var(--head);font-weight:800;font-size:clamp(21px,5.6vw,30px);text-decoration:none;letter-spacing:-.03em;white-space:nowrap}
-.nav-btn{background:#fff;color:var(--red);font-weight:700;text-decoration:none;padding:9px 18px;border-radius:999px;font-size:14px;white-space:nowrap}
+nav{background:#fff}
+nav .wrap{display:flex;align-items:center;min-height:84px;padding-top:8px;padding-bottom:8px}
+.logo{display:inline-flex;flex-direction:column;align-items:flex-start;text-decoration:none;font-family:"Montserrat","Segoe UI",Arial,sans-serif;font-style:italic}
+.lt{display:flex;align-items:flex-start;gap:3px}
+.akc{font-weight:900;font-size:clamp(38px,11vw,50px);line-height:.9;letter-spacing:-.04em;color:var(--red)}
+.cart{width:clamp(26px,7.6vw,34px);height:auto;margin-top:-1px;flex:none}
+.shopping{font-weight:800;font-size:clamp(28px,8.2vw,38px);line-height:.95;letter-spacing:-.035em;color:#1b1b1b;margin-top:-1px}
+.swoosh{width:min(100%,170px);height:10px;margin-top:3px}
 
 .hero{background:var(--red);color:#fff;padding:36px 0 0;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
@@ -41,6 +45,16 @@ h1{font-family:var(--head);font-weight:800;font-size:clamp(27px,7.8vw,58px);line
 .cta span{font-size:13px;color:var(--muted);font-weight:500}
 .cta:hover{transform:translateY(3px);box-shadow:0 4px 0 var(--red-deep)}
 .cta:active{transform:translateY(7px);box-shadow:0 0 0 var(--red-deep)}
+.dl{display:flex;align-items:center;gap:12px;width:100%;max-width:460px;background:#fff;color:var(--ink);text-decoration:none;border-radius:30px;padding:11px 12px 11px 18px;box-shadow:0 7px 0 var(--red-deep);transition:transform .15s,box-shadow .15s}
+.dl:hover{transform:translateY(3px);box-shadow:0 4px 0 var(--red-deep)}
+.dl:active{transform:translateY(7px);box-shadow:0 0 0 var(--red-deep)}
+.dl .and{width:38px;height:38px;flex:none}
+.dl .dv{width:2px;align-self:stretch;margin:4px 2px;background:#f1c4c0;flex:none}
+.dl .dt{flex:1;min-width:0;display:flex;flex-direction:column}
+.dl .dt strong{font-family:"Montserrat","Segoe UI",Arial,sans-serif;font-style:italic;font-weight:800;color:var(--red);font-size:clamp(15px,4.6vw,21px);line-height:1.15;letter-spacing:-.02em}
+.dl .dt span{font-size:13px;color:#555;font-weight:500;margin-top:3px}
+.dl .go{width:48px;height:48px;border-radius:50%;background:var(--red);display:grid;place-items:center;flex:none}
+.dl .go svg{width:23px;height:23px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .stats{display:flex;gap:32px;margin-top:30px}
 .stat{display:flex;flex-direction:column}
 .stat[hidden]{display:none}
@@ -133,21 +147,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .hero{padding-top:28px}
   .hero .wrap{grid-template-columns:1fr;gap:10px}
   .hero .txt{padding-bottom:34px}
-  .hero .cta{display:flex;width:100%;align-items:center;text-align:center}
   .phone-wrap{height:400px}
   .feats,.steps ol{grid-template-columns:1fr}
   .feat{padding-right:0}
   section{padding:64px 0}
 }
-@media (prefers-reduced-motion:reduce){.phone{animation:none}.cta{transition:none}html{scroll-behavior:auto}}
+@media (max-width:420px){.dl .dv{display:none}.dl .and{width:30px;height:30px}.dl .go{width:40px;height:40px}.dl .go svg{width:20px;height:20px}.dl{padding:10px 10px 10px 14px;gap:10px}}
+@media (prefers-reduced-motion:reduce){.phone{animation:none}.cta,.dl{transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#">AKC Shopping</a>
-    <a class="nav-btn" href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk">Download</a>
+    <a class="logo" href="#" aria-label="AKC Shopping">
+      <span class="lt">
+        <span class="akc">AKC</span>
+        <svg class="cart" viewBox="0 0 64 56" fill="none" stroke="#CC0000" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 6h10l7 28h32l7-21H16" stroke-width="5"/>
+          <path d="M28 14v18M38 14v18M48 14v18M20 23h37" stroke-width="2.6"/>
+          <circle cx="26" cy="46" r="4.5" fill="#CC0000" stroke="none"/><circle cx="48" cy="46" r="4.5" fill="#CC0000" stroke="none"/>
+        </svg>
+      </span>
+      <span class="shopping">Shopping</span>
+      <svg class="swoosh" viewBox="0 0 170 10" fill="none" aria-hidden="true"><path d="M2 8C40 1 110 0 168 5" stroke="#CC0000" stroke-width="3" stroke-linecap="round"/></svg>
+    </a>
   </div>
 </nav>
 
@@ -156,9 +180,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="txt">
       <h1>All You Need,<br>All in One Place</h1>
       <p class="lead">Browse many stores in one app, pay with Airtel Money, TNM Mpamba or bank transfer, and follow your order until it reaches your door.</p>
-      <a class="cta" href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk">
-        <strong>Download for Android</strong>
-        <span>Version 1.0.0, 59.5 MB</span>
+      <a class="dl" href="https://github.com/AKC-SHOPPING/akc-shopping-app/releases/latest/download/AKC-Shopping.apk">
+        <svg class="and" viewBox="0 0 48 48" fill="#CC0000" stroke="#CC0000" stroke-linecap="round" aria-hidden="true">
+          <path d="M10 20a14 14 0 0 1 28 0z" stroke="none"/><path d="M15 8 12 3M33 8l3-5" stroke-width="2"/>
+          <circle cx="19" cy="14" r="1.7" fill="#fff" stroke="none"/><circle cx="29" cy="14" r="1.7" fill="#fff" stroke="none"/>
+          <rect x="10" y="22" width="28" height="16" rx="3" stroke="none"/><rect x="3" y="22" width="5" height="13" rx="2.5" stroke="none"/><rect x="40" y="22" width="5" height="13" rx="2.5" stroke="none"/>
+          <rect x="16" y="36" width="5" height="9" rx="2.5" stroke="none"/><rect x="27" y="36" width="5" height="9" rx="2.5" stroke="none"/>
+        </svg>
+        <span class="dv"></span>
+        <span class="dt"><strong>Download for Android</strong><span>Version 1.0.0, 59.5 MB</span></span>
+        <span class="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg></span>
       </a>
       <div class="stats" aria-live="polite">
         <div class="stat" id="stat-dl" hidden><b id="n-dl">0</b><span>downloads</span></div>
@@ -285,7 +316,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       box.hidden=false;
     }
   }
-  function cached(key){try{var o=JSON.parse(sessionStorage.getItem(key));if(o&&Date.now()-o.t<600000)return o.v}catch(e){}return null}
+  function cached(key){try{var o=JSON.parse(sessionStorage.getItem(key));if(o&&Date.now()-o.t<1800000)return o.v}catch(e){}return null}
   function save(key,v){try{sessionStorage.setItem(key,JSON.stringify({t:Date.now(),v:v}))}catch(e){}}
 
   // Downloads: GitHub counts every download of each APK file in the Releases.
@@ -301,13 +332,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       }).catch(function(){});
   }
 
-  // Views: free shared counter, counted once per browser session.
+  // Views: free shared counter (Abacus), counted once per browser session.
   var v=cached('akc_views');
   if(v!==null){show('views',v,MIN_VIEWS)}
   else{
-    fetch('https://tally.yuki.sh/hits/github@akc-shopping/landing')
+    fetch('https://abacus.jasoncameron.dev/hit/akc-shopping.github.io/landing')
       .then(function(r){if(!r.ok)throw 0;return r.json()})
-      .then(function(j){save('akc_views',j.visit);show('views',j.visit,MIN_VIEWS)})
+      .then(function(j){save('akc_views',j.value);show('views',j.value,MIN_VIEWS)})
       .catch(function(){});
   }
 })();
